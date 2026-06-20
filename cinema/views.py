@@ -146,7 +146,6 @@ class OrderViewSet(
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
-        # Адміни теж бачать тільки свої замовлення
         return self.queryset.filter(user=self.request.user)
 
     def get_serializer_class(self):
